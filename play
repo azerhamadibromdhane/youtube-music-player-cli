@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]]; then
+    echo "🎵 Usage: play <song name>"
+    exit 1
+fi
+
+query="$*"
+echo "🎧 Searching YouTube for: $query"
+exec mpv --no-video --ytdl-format=bestaudio "ytdl://ytsearch1:$query"
